@@ -1,6 +1,5 @@
 package com.enten.aclService.controller;
 
-
 import com.enten.aclService.entity.Role;
 import com.enten.aclService.service.RoleService;
 import com.enten.commonutils.Result;
@@ -15,9 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * <p>
  *  前端控制器
- * </p>
  *
  * @author testjava
  * @since 2020-01-12

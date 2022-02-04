@@ -1,7 +1,5 @@
 package com.enten.aclService.controller;
 
-
-import com.baomidou.mybatisplus.extension.api.R;
 import com.enten.aclService.entity.Permission;
 import com.enten.aclService.service.PermissionService;
 import com.enten.commonutils.Result;

@@ -24,6 +24,7 @@ public class IndexController {
     /**
      * 根据token获取用户信息
      */
+    @ApiOperation(value = "根据token获取用户信息")
     @GetMapping("info")
     public Result info(){
         //获取当前登录用户用户名
@@ -34,8 +35,8 @@ public class IndexController {
 
     /**
      * 获取菜单
-     * @return
      */
+    @ApiOperation(value = "获取菜单")
     @GetMapping("menu")
     public Result getMenu(){
         //获取当前登录用户用户名
@@ -44,6 +45,7 @@ public class IndexController {
         return Result.ok().data("permissionList", permissionList);
     }
 
+    @ApiOperation(value = "登出")
     @PostMapping("logout")
     public Result logout(){
         return Result.ok();

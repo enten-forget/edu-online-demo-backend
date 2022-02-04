@@ -7,9 +7,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * <p>
  * 用户实体类
- * </p>
  *
  * @author qy
  * @since 2019-11-08

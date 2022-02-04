@@ -22,9 +22,7 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * <p>
  * 访问过滤器
- * </p>
  *
  * @author qy
  * @since 2019-11-08
@@ -63,12 +61,16 @@ public class TokenAuthenticationFilter extends BasicAuthenticationFilter {
         chain.doFilter(req, res);
     }
 
+    /**
+     * 登录授权过滤器 根据header中获取到的token信息从redis中查出数据
+     */
     private UsernamePasswordAuthenticationToken getAuthentication(HttpServletRequest request) {
         // token置于header里
         String token = request.getHeader("token");
         if (token != null && !"".equals(token.trim())) {
+            // 如果用户有权限
             String userName = tokenManager.getUserFromToken(token);
-
+            // 获取到用户权限菜单
             List<String> permissionValueList = (List<String>) redisTemplate.opsForValue().get(userName);
             Collection<GrantedAuthority> authorities = new ArrayList<>();
             for(String permissionValue : permissionValueList) {

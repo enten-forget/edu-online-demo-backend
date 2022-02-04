@@ -10,9 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * <p>
  * 登出业务逻辑类
- * </p>
  *
  * @author qy
  * @since 2019-11-08

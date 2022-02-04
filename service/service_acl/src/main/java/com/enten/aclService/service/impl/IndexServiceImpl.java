@@ -7,6 +7,7 @@ import com.enten.aclService.service.IndexService;
 import com.enten.aclService.service.PermissionService;
 import com.enten.aclService.service.RoleService;
 import com.enten.aclService.service.UserService;
+import com.enten.servicebase.exceptionhandler.EntenException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
@@ -33,15 +34,12 @@ public class IndexServiceImpl implements IndexService {
 
     /**
      * 根据用户名获取用户登录信息
-     *
-     * @param username
-     * @return
      */
     public Map<String, Object> getUserInfo(String username) {
         Map<String, Object> result = new HashMap<>();
         User user = userService.selectByUsername(username);
         if (null == user) {
-            //throw new GuliException(ResultCodeEnum.FETCH_USERINFO_ERROR);
+            throw new EntenException(20001,"用户不能为空");
         }
 
         //根据用户id获取角色

@@ -15,9 +15,7 @@ import java.util.List;
 
 
 /**
- * <p>
  * 自定义userDetailsService - 认证用户详情
- * </p>
  *
  * @author qy
  * @since 2019-11-08
