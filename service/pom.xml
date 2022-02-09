@@ -120,8 +120,14 @@
         </dependency>
     </dependencies>
 
-    <!-- 项目打包时会将java目录中的*.xml文件也进行打包 -->
     <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+        <!-- 项目打包时会将java目录中的*.xml文件也进行打包 -->
         <resources>
             <resource>
                 <directory>src/main/java</directory>

@@ -7,7 +7,6 @@ import com.enten.staService.entity.StatisticsDaily;
 import com.enten.staService.mapper.StatisticsDailyMapper;
 import com.enten.staService.service.StatisticsDailyService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.sun.xml.internal.bind.v2.TODO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,9 +16,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * <p>
  * 网站统计日数据 服务实现类
- * </p>
  *
  * @author 遠天
  * @since 2022-01-19
