@@ -11,7 +11,7 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-@ComponentScan("com.enten")
+@ComponentScan({"com.enten"})
 @MapperScan("com.enten.aclService.mapper")
 public class AclApplication {
     public static void main(String[] args) {

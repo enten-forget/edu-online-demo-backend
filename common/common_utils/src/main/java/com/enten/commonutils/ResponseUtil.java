@@ -17,8 +17,6 @@ public class ResponseUtil {
             mapper.writeValue(response.getWriter(), r);
         } catch (IOException e) {
             e.printStackTrace();
-        }finally {
-            response.reset();
         }
     }
 }
