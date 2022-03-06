@@ -47,6 +47,7 @@ public class TokenLoginFilter extends UsernamePasswordAuthenticationFilter {
     public Authentication attemptAuthentication(HttpServletRequest req, HttpServletResponse res)
             throws AuthenticationException {
         try {
+            // 获取表单数据
             User user = new ObjectMapper().readValue(req.getInputStream(), User.class);
             return authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword(), new ArrayList<>()));
         } catch (IOException e) {
@@ -61,6 +62,7 @@ public class TokenLoginFilter extends UsernamePasswordAuthenticationFilter {
     @Override
     protected void successfulAuthentication(HttpServletRequest req, HttpServletResponse res, FilterChain chain,
                                             Authentication auth) {
+        // 认证成功,得到认证成功之后的用户信息
         SecurityUser user = (SecurityUser) auth.getPrincipal();
         // 登录成功,将用户名,权限等信息存入token中
         String token = tokenManager.createToken(user.getCurrentUserInfo().getUsername());

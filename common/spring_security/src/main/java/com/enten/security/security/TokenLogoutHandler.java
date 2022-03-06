@@ -27,7 +27,9 @@ public class TokenLogoutHandler implements LogoutHandler {
 
     @Override
     public void logout(HttpServletRequest request, HttpServletResponse response, Authentication authentication) {
+        //1 从header里面获取token
         String token = request.getHeader("token");
+        //2 token不为空, 移除token,从redis删除token
         if (token != null) {
             tokenManager.removeToken(token);
 

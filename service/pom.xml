@@ -127,10 +127,10 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
-        <!-- 项目打包时会将java目录中的*.xml文件也进行打包 -->
+        <!-- 项目打包时会将resources目录中的*.xml文件也进行打包 -->
         <resources>
             <resource>
-                <directory>src/main/java</directory>
+                <directory>src/main/resources</directory>
                 <includes>
                     <include>**/*.properties</include>
                     <include>**/*.xml</include>

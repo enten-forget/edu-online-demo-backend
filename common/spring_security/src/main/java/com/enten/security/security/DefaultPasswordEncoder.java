@@ -25,10 +25,16 @@ public class DefaultPasswordEncoder implements PasswordEncoder {
 
     }
 
+    /**
+     * 把密码用MD5加密
+     */
     public String encode(CharSequence rawPassword) {
         return MD5.encrypt(rawPassword.toString());
     }
 
+    /**
+     * 进行密码比对(rawPassword:传入密码 encodedPassword:数据库中的密码)
+     */
     public boolean matches(CharSequence rawPassword, String encodedPassword) {
         return encodedPassword.equals(MD5.encrypt(rawPassword.toString()));
     }

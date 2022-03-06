@@ -1,9 +1,7 @@
 package com.enten.aclService.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.enten.aclService.entity.Permission;
 import com.enten.aclService.service.IndexService;
-import com.enten.aclService.service.PermissionService;
 import com.enten.commonutils.Result;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -48,11 +48,12 @@ public class TokenAuthenticationFilter extends BasicAuthenticationFilter {
 
         UsernamePasswordAuthenticationToken authentication = null;
         try {
+            // 获取当前认证成功用户权限信息
             authentication = getAuthentication(req);
         } catch (Exception e) {
             ResponseUtil.out(res, Result.error());
         }
-
+        // 判断如果有权限信息,放到权限上下文中
         if (authentication != null) {
             SecurityContextHolder.getContext().setAuthentication(authentication);
         } else {
